@@ -20,4 +20,20 @@
         }
             return parseInt(this.NumTrad,10);
         }
+
+    static TraducirNumeros(a:string){
+        while (this.NumTrad.includes("1") == true|| this.NumTrad.includes("2") == true || this.NumTrad.includes("3") == true || this.NumTrad.includes("4") == true || this.NumTrad.includes("5") == true || this.NumTrad.includes("6") == true || this.NumTrad.includes("7") == true || this.NumTrad.includes("8") == true || this.NumTrad.includes("9") == true || this.NumTrad.includes("0") == true){
+            this.NumTrad = this.NumTrad.replace("1",1);
+            this.NumTrad = this.NumTrad.replace("2",2);
+            this.NumTrad = this.NumTrad.replace("3",3);
+            this.NumTrad = this.NumTrad.replace("4",4);
+            this.NumTrad = this.NumTrad.replace("5",5);
+            this.NumTrad = this.NumTrad.replace("6",6);
+            this.NumTrad = this.NumTrad.replace("7",7);
+            this.NumTrad = this.NumTrad.replace("8",8);
+            this.NumTrad = this.NumTrad.replace("9",9);
+            this.NumTrad = this.NumTrad.replace("0",0);
+            }
+                return parseInt(this.NumTrad,10);
+            }
     }

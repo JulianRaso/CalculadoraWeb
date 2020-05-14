@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1 id="h1">calFetch</h1>
+    
+    <input id="txtComando" type="text" value="restar/cinco/dos">
+    <button id="btnEnviar">Enviar</button>
+
+
+    <script>    
+        function enviarComando(){
+          
+            
+            var txtComando = document.getElementById('txtComando');
+            
+            console.log(txtComando.value);
+
+            var url = 'http://localhost:4000/api/calc/'+ txtComando.value;
+
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(dataJson) {
+                    console.log(dataJson);
+
+                    var h1 = document.getElementById('h1');
+                    h1.innerHTML = 'Total = ' + dataJson.Result;
+                });
+
+        }
+
+        var btnEnviar = document.getElementById('btnEnviar');
+        btnEnviar.addEventListener('click', enviarComando, false);
+
+    </script>
+    
+</body>
+</html>

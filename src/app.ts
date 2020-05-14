@@ -1,16 +1,16 @@
 import State from './State'
-import Traducir from './Traducir'
+
 
 //Servidor y complementos
 console.log('Server on port 3000');
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 var express = require('express');
 var app = express();
 var server = app.listen(PORT);
 
 app.set('view engine','ejs');
-
+app.use(express.static('public'));
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -34,6 +34,7 @@ app.get('/api/calc/:operador/:num1/:num2', function(req, res){
     console.log(Result);
     res.json({Result});
 });
+
 
 //Post / Mandar Datos Ingresados
 
